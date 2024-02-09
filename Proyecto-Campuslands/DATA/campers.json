@@ -1,0 +1,10 @@
+{
+    "grados":{
+        "P1":[
+            {"id": 0, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
+        ],
+        "M1":[
+            {"id": 0, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
+        ]
+    }
+}
