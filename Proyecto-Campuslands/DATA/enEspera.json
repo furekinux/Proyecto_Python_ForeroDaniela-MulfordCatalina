@@ -1,11 +1,7 @@
 {
     "no_estudiantes":{
-        "Inscripciones":[
+        "gente":[
             {"id": 0, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
-        ],
-        "otros":[
-            {"id": 0, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
-
         ]
     }
 }
