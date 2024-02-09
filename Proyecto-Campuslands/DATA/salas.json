@@ -1,15 +1,7 @@
 {
     "salas": {
-        "Sputnik":[
-            {"id": 0, "nombres": "Karen", "apellidos": "none"}
-        ]
-        ,"Artemis": [
-            {"id": 0, "nombres": "Pedro", "apellidos":"Gomez", "Grupos":"none"},
-            {"id": 0, "nombres": "Miguel", "apellidos":"none", "Grupos":"none"},
-            {"id": 0, "nombres": "none", "apellidos":"none", "Grupos": "none"}
-        ]
-        ,"Apolo": [
-            "P1","M1"
-            ]
+        "Sputnik"
+        ,"Artemis"
+        ,"Apolo"
     }
 }
