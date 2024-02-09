@@ -1,3 +1,14 @@
 {
-    
-}
+    "Campuslands": {
+        "Coordinacion":[
+            {"id": 0, "nombres": "Karen", "apellidos": "none"}
+        ]
+        ,"Trainer": [
+            {"id": 0, "nombres": "Pedro", "apellidos":"Gomez", "Grupos":"none"},
+            {"id": 0, "nombres": "Miguel", "apellidos":"none", "Grupos":"none"},
+            {"id": 0, "nombres": "none", "apellidos":"none", "Grupos": "none"}
+        ]
+        ,"Grupos": [
+        ]
+        }
+    }
