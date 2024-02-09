@@ -8,7 +8,12 @@
             {"id": 0, "nombres": "Miguel", "apellidos":"none", "Grupos":"none"},
             {"id": 0, "nombres": "none", "apellidos":"none", "Grupos": "none"}
         ]
-        ,"Grupos": [
-        ]
+        ,"Grupos": {
+            "P1": [
+                {"id_grupo": 1}
+            ]
+            ,"M1": [
+                {"id_grupo": 2}
+        }
         }
     }
