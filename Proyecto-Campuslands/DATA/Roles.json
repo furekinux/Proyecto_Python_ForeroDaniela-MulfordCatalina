@@ -6,7 +6,7 @@
         ,"Trainer": [
             {"id": 0, "nombres": "Pedro", "apellidos":"Gomez", "Grupos":"none"},
             {"id": 0, "nombres": "Miguel", "apellidos":"none", "Grupos":"none"},
-            {"id": 0, "nombres": "none", "apellidos":"none", "Grupos": "none"}
+            {"id": 0, "nombres": "Johlver", "apellidos":"Pardo", "Grupos": "none"}
         ]
         ,"Grupos": [
             "P1","M1"
