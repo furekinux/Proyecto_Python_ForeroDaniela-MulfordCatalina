@@ -59,7 +59,11 @@ if quien == "Trainer" or quien == "trainer":
 
 ##-------------Pon aqui lo de campers------------------------------------##
             
-
+if quien == "Camper" or quien == "camper":
+    identificacion=input("Pon tu nombre: \n")
+    if any(usuario["nombres"] == identificacion for usuario in us_camper):
+        if True:
+            hacer_camp=int(input("Selecciona un número: \n 1. Ver notas\n 2. Ver estado \n 3. Retirarse"))
 
 ##-----------------------Inicio de coordinación--------------------------##
 if quien=="Coordinacion" or quien=="coordinacion":
