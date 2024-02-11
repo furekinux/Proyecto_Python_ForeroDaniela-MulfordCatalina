@@ -58,12 +58,23 @@ if quien == "Trainer" or quien == "trainer":
         print("Identificación incorrecta para un Trainer.")
 
 ##-------------Pon aqui lo de campers------------------------------------##
-            
+
 if quien == "Camper" or quien == "camper":
-    identificacion=input("Pon tu nombre: \n")
-    if any(usuario["nombres"] == identificacion for usuario in us_camper):
-        if True:
-            hacer_camp=int(input("Selecciona un número: \n 1. Ver notas\n 2. Ver estado \n 3. Retirarse"))
+    print("Pon tu grupo: \nGrupos disponibles: ")
+    for i in range(len(us_camper)):
+        print(us_camper[i])
+        i=i+1
+    grupo=str(input(""))
+    if any(usuario["nombres"] == grupo for usuario in us_camper):
+        identificacion=input("Pon tu ID de camper: \n")
+        if any(usuario["id"] == identificacion for usuario in us_camper[grupo]):
+            if True:
+                hacer_camp=int(input("Selecciona un número: \n 1. Ver notas\n 2. Ver estado \n 3. Retirarse"))
+                if hacer_camp==1:
+                    for i in range(len(us_camper)):
+                        notas = [notasJS for notas in us_camper[i] if notasJS == identificacion]
+    else:
+        print("Grupo no disponible")
 
 ##-----------------------Inicio de coordinación--------------------------##
 if quien=="Coordinacion" or quien=="coordinacion":
