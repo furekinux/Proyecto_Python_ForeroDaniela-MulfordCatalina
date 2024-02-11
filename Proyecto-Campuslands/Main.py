@@ -41,18 +41,21 @@ if quien == "Trainer" or quien == "trainer":
                 else:
                     print("No hay grupos asignados.")
 
-            elif hacer_trainer==2:##No se pq pero no me esta funcionando y me detuvo el codigo, lo arreglo "mañana"
-                trainer_salones=[]
-                for salon, clase in salo_trainers.items():
-                    for clases in clase:
-                        for nom_salon, info in clases.items():
-                            if info.get("trainer")==identificacion:
-                                trainer_salones.append((salon,info["hora"]))
+            elif hacer_trainer==2:
+                trainer_salones = []
+                for salon_nombre, clases in salo_trainers.items():
+                    for clase in clases:
+                        for nombre_clase, info in clase.items():
+                            if info.get("trainer") == identificacion:
+                                trainer_salones.append({salon_nombre: info})
+                
                 if trainer_salones:
-                    for sala,hora in trainer_salones:
-                        print(f"Salon:{sala}, Hora:{hora}")
+                    print("Tu horario es:")
+                    for sala in trainer_salones:
+                        print(sala)
                 else:
-                    print("No hay hora o salon asignado.")
+                    print("No tienes salas asignadas.")
+
                 
     else:
         print("Identificación incorrecta para un Trainer.")
