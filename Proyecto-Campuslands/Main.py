@@ -62,7 +62,7 @@ if quien == "Trainer" or quien == "trainer":
 if quien == "Camper" or quien == "camper":
     print("Pon tu grupo: \nGrupos disponibles: ")
     for i in range(len(us_camper)):
-        print(us_camper[i])
+        print(us_camper[i]) ##No está funcionando aqui(analizando)
         i=i+1
     grupo=str(input(""))
     if any(usuario["nombres"] == grupo for usuario in us_camper):
