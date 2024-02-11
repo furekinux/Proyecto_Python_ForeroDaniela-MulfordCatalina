@@ -9,8 +9,10 @@
             {"id": 0, "nombres": "Johlver", "apellidos":"Pardo", "Grupos": "none"}
         ]
         ,"Grupos": [
-            "P1","M1"
-            ]
+            {"grupos":"P1","Ruta":"Java"},
+            {"grupos":"M1","Ruta":"HTML"},
+            {"grupos":"A1","Ruta":"Note"}
+        ]
     }
 }
     
