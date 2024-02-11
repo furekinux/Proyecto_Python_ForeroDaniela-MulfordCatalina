@@ -1,7 +1,6 @@
 {
-    "no_estudiantes":{
-        "gente":[
-            {"id": 0, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
+    "gente":[
+         {"id": 0, "nombres": "Luis", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "ingresado","riesgo": "none"}
+        ,{"id": 1, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "retirado","riesgo": "none"}
         ]
-    }
 }
