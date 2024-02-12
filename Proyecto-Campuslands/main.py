@@ -21,7 +21,7 @@ us_camper=campersJS["grados"]
 us_coordinacion=rolesJS["Campuslands"]["Coordinacion"]
 
 #Ingresar usuario:
-quien=str(input("Quien desea ingresar?(Camper,Trainer,Coordinación)(No uses tildes o puntos)\n"))
+quien=str(input("Quien desea ingresar?(Trainer,Coordinación)(No uses tildes o puntos)\n"))
 
 #         Trainer:
 
@@ -30,7 +30,7 @@ if quien == "Trainer" or quien == "trainer":
 
     if any(int(usuario["id"]) == identificacion for usuario in us_trainer):
         if True:
-            hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n 3. Ingresar notas\n"))
+            hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n"))
             
             if hacer_trainer == 1:
                 grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["id"] == identificacion]
@@ -55,9 +55,6 @@ if quien == "Trainer" or quien == "trainer":
                         print(sala)
                 else:
                     print("No tienes salas asignadas.")
-            
-            elif hacer_trainer==3:#En proceso
-                r=0
 
                 
     else:
@@ -83,5 +80,5 @@ elif quien == "Camper" or quien == "camper":
     
     ##-----------------------Inicio de coordinación--------------------------##
 elif quien=="Coordinacion" or quien=="coordinacion":
-    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Cambiar Estado \n 3. Crear rutas\n 4. Asignar"))##Aún no termine de escribir el menú, me distraje con la corrección del trainer jsjaja
+    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar"))##Aún no termine de escribir el menú, me distraje con la corrección del trainer jsjaja
     
