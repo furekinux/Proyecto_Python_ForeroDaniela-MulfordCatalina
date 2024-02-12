@@ -67,9 +67,19 @@ if quien == "Trainer" or quien == "trainer":
     ##-----------------------Inicio de coordinación--------------------------##
 elif quien=="Coordinacion" or quien=="coordinacion":
     hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n"))
-    if hacer_cordi==1:
+    
+    if hacer_cordi==1: ##EDITAR/VER
         menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
-        print("notasJS")##Lo de dani y su función :)
+        
+        if hacer_cordi==1: 
+            group=str(input("\nQue grupo desea revisar? \n"))##SELECCIÓN DE GRUPO A REVISAR
+            grupos = [grupo["Grupos"] for grupo in notasJS if grupo["notas"] == group]
+            if grupos:
+                print("Tus grupos son:")
+                for gru in grupos:
+                    print({gru})
+        elif hacer_cordi==2:
+            print("No logro que funciones")
 
     elif hacer_cordi==2:#Estado
         menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
