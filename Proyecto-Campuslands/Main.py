@@ -9,7 +9,7 @@ genteJS = json.load(conec)
 conecta = open("DATA/notas.json")
 notasJS = json.load(conecta)
 
-conlos = open("DATA/Roles.json")
+conlos = open("DATA/roles.json")
 rolesJS = json.load(conlos)
 
 conjsons = open("DATA/salas.json")
