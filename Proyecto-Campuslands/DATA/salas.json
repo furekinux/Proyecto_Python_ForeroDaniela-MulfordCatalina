@@ -1,13 +1,13 @@
 {
     "salas": {
         "Sputnik": [
-            {"clase1": {"hora": "6am-10am", "trainer": "Pedro", "grupo": "p1"}, "clase2": {"hora": "10am-2pm", "trainer": "Miguel", "grupo": "m2"}, "clase3":{"hora":"2pm-6pm","trainer":"none","grupo":"a3","clase4":{"hora":"6pm-10pm","trainer":"none","grupo":"0"}}}
+            {"clase1": {"hora": "6am-10am", "trainer": "Pedro","id": 123, "grupo": "p1"}, "clase2": {"hora": "10am-2pm", "trainer": "Miguel","id": 456, "grupo": "m2"}, "clase3":{"hora":"2pm-6pm","trainer":"none","id": 0,"grupo":"a3","clase4":{"hora":"6pm-10pm","trainer":"none","id": 0,"grupo":"0"}}}
         ],
         "Artemis":[
-            {"clase1": {"hora": "6am-10am", "trainer": "none", "grupo": "none"}, "clase2": {"hora": "10am-2pm", "trainer": "Pedro", "grupo": "0"}, "clase3":{"hora":"2pm-6pm","trainer":"none","grupo":"0"},"clase4":{"hora":"6pm-10pm","trainer":"none","grupo":"0"}}
+            {"clase1": {"hora": "6am-10am", "trainer": "none","id": 0, "grupo": "none"}, "clase2": {"hora": "10am-2pm", "trainer": "Pedro","id": 123, "grupo": "0"}, "clase3":{"hora":"2pm-6pm","trainer":"none","id": 0,"grupo":"0"},"clase4":{"hora":"6pm-10pm","trainer":"none","id": 0,"grupo":"0"}}
         ],
         "Apolo":[
-            {"clase1": {"hora": "6am-10am", "trainer": "none", "grupo": "none"}, "clase2": {"hora": "10am-2pm", "trainer": "none", "grupo": "0"}, "clase3":{"hora":"2pm-6pm","trainer":"none","grupo":"0"},"clase4":{"hora":"6pm-10pm","trainer":"Pedro","grupo":"0"}}
+            {"clase1": {"hora": "6am-10am", "trainer": "none","id": 0, "grupo": "none"}, "clase2": {"hora": "10am-2pm", "trainer": "none", "id": 0,"grupo": "0"}, "clase3":{"hora":"2pm-6pm","trainer":"Johlver","id": 789,"grupo":"0"},"clase4":{"hora":"6pm-10pm","trainer":"Pedro","id": 123,"grupo":"0"}}
         ]
     }
 }
