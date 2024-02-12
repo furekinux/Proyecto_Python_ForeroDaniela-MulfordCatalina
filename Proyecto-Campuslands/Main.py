@@ -21,7 +21,7 @@ us_camper=campersJS["grados"]
 us_coordinacion=rolesJS["Campuslands"]["Coordinacion"]
 
 #Ingresar usuario:
-quien=str(input("Quien desea ingresar?(No uses tildes o puntos)\n"))
+quien=str(input("Quien desea ingresar?(Camper,Trainer,Coordinación)(No uses tildes o puntos)\n"))
 
 #         Trainer:
 
