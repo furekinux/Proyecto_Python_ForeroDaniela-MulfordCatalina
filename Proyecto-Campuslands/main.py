@@ -26,14 +26,14 @@ quien=str(input("Quien desea ingresar?(Camper,Trainer,Coordinación)(No uses til
 #         Trainer:
 
 if quien == "Trainer" or quien == "trainer":
-    identificacion=input("Pon tu nombre: \n")
+    identificacion=int(input("Pon tu identificación: \n"))
 
-    if any(usuario["nombres"] == identificacion for usuario in us_trainer):
+    if any(int(usuario["id"]) == identificacion for usuario in us_trainer):
         if True:
-            hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n"))
+            hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n 3. Ingresar notas\n"))
             
             if hacer_trainer == 1:
-                grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["nombres"] == identificacion]
+                grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["id"] == identificacion]
                 if grupos:
                     print("Tus grupos son:")
                     for gru in grupos:
@@ -46,7 +46,7 @@ if quien == "Trainer" or quien == "trainer":
                 for salon_nombre, clases in salo_trainers.items():
                     for clase in clases:
                         for nombre_clase, info in clase.items():
-                            if info.get("trainer") == identificacion:
+                            if info.get("id") == identificacion:
                                 trainer_salones.append({salon_nombre: info})
                 
                 if trainer_salones:
@@ -55,14 +55,16 @@ if quien == "Trainer" or quien == "trainer":
                         print(sala)
                 else:
                     print("No tienes salas asignadas.")
+            
+            elif hacer_trainer==3:#En proceso
+                r=0
 
                 
     else:
         print("Identificación incorrecta para un Trainer.")
 
-##-------------Pon aqui lo de campers------------------------------------##
-
-if quien == "Camper" or quien == "camper":
+    ##-------------Pon aqui lo de campers------------------------------------##
+elif quien == "Camper" or quien == "camper":
     print("Pon tu grupo: \nGrupos disponibles: ")
     for i in range(len(us_camper)):
         print(us_camper[i]) ##No está funcionando aqui(analizando)
@@ -78,7 +80,8 @@ if quien == "Camper" or quien == "camper":
                         notas = [notasJS for notas in us_camper[i] if notasJS == identificacion]
     else:
         print("Grupo no disponible")
-
-##-----------------------Inicio de coordinación--------------------------##
-if quien=="Coordinacion" or quien=="coordinacion":
+    
+    ##-----------------------Inicio de coordinación--------------------------##
+elif quien=="Coordinacion" or quien=="coordinacion":
     hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Cambiar Estado \n 3. Crear rutas\n 4. Asignar"))##Aún no termine de escribir el menú, me distraje con la corrección del trainer jsjaja
+    
