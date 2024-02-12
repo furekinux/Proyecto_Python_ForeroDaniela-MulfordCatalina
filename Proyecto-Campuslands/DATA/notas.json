@@ -1,7 +1,13 @@
 {
-    "notas":[
+    "notas":{
+        "P1":[
         {"id": 132, "teorica": 0, "practica": 0, "trabajos": 0}
-        ,{"id": 243, "teorica": 0, "practica": 0, "trabajos": 0}
-        ,{"id": 354, "teorica": 0, "practica": 0, "trabajos": 0}
-    ]
+        ],
+        "M1":[
+        {"id": 243, "teorica": 0, "practica": 0, "trabajos": 0}
+        ],
+        "J1":[
+        {"id": 354, "teorica": 0, "practica": 0, "trabajos": 0}
+        ]
+    }
 }
