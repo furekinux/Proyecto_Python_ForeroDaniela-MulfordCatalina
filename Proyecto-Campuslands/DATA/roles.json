@@ -4,9 +4,9 @@
             {"id": 0, "nombres": "Karen", "apellidos": "none"}
         ]
         ,"Trainer": [
-            {"id": 0, "nombres": "Pedro", "apellidos":"Gomez", "Grupos":"none"},
-            {"id": 0, "nombres": "Miguel", "apellidos":"none", "Grupos":"none"},
-            {"id": 0, "nombres": "Johlver", "apellidos":"Pardo", "Grupos": "none"}
+            {"id": 123, "nombres": "Pedro", "apellidos":"Gomez", "Grupos":"none"},
+            {"id": 456, "nombres": "Miguel", "apellidos":"Castro", "Grupos":"none"},
+            {"id": 789, "nombres": "Johlver", "apellidos":"Pardo", "Grupos": "none"}
         ]
         ,"Grupos": [
             {"grupos":"P1","Ruta":"Java"},
