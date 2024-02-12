@@ -1,7 +1,5 @@
 ##Primer archivo de prueba
 import json
-import module as mod
-
 con = open("DATA/campers.json")
 campersJS = json.load(con)
 
@@ -19,6 +17,7 @@ salasJS = json.load(conjsons)
 
 us_trainer=rolesJS["Campuslands"]["Trainer"]
 salo_trainers=salasJS["salas"]
+estado_cursando=campersJS["grados"]
 us_camper=campersJS["grados"]
 us_coordinacion=rolesJS["Campuslands"]["Coordinacion"]
 
@@ -65,6 +64,29 @@ if quien == "Trainer" or quien == "trainer":
     
     ##-----------------------Inicio de coordinación--------------------------##
 elif quien=="Coordinacion" or quien=="coordinacion":
-    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar"))##Aún no termine de escribir el menú, me distraje con la corrección del trainer jsjaja
+    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n"))##Aún no termine de escribir el menú, me distraje con la corrección del trainer jsjaja
     if hacer_cordi==1:
-        ##Lo de dani y su función :)
+        menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
+        print("notasJS")##Lo de dani y su función :)
+
+    elif hacer_cordi==2:#Estado
+        menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
+        #Todos los de un mismo estado
+        
+        if menu_estado==1:
+            opcion1=str(input("Que estado deseas buscar?(Ingreso, Inscrito, Aprobado,Cursando, Graduado, Expulsado, Retirado)\n").lower)
+            
+            if any(estado["estado"] == "cursando" for estado in estado_cursando):
+                if True:
+                    cursando = []
+                    for grupo_estado, grupito in cursando.items():
+                        for clase in grupito:
+                            for buscando, info in clase.items():
+                                if info.get("estado") == opcion1:
+                                    cursando.append({grupo_estado: info})
+                        if cursando:
+                            print("Tu horario es:")
+                            for estudiando in cursando:
+                                print(estudiando)
+                        else:
+                            print("No tienes salas asignadas.")
