@@ -1,10 +1,13 @@
 {
     "grados":{
         "P1":[
-            {"id": 0, "nombres": "Luis", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
+            {"id": 132, "nombres": "Luis", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
         ],
         "M1":[
-            {"id": 1, "nombres": "none", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
+            {"id": 243, "nombres": "Juan", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
+        ],
+        "J1":[
+            {"id": 354, "nombres": "Maria", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "none","riesgo": "none"}
         ]
     }
 }
