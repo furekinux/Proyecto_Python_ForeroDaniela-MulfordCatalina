@@ -1,6 +1,7 @@
 {
     "notas":[
-        {"id": 0, "teorica": 0, "practica": 0, "trabajos": 0}
-        ,{"id": 1, "teorica": 0, "practica": 0, "trabajos": 0}
+        {"id": 132, "teorica": 0, "practica": 0, "trabajos": 0}
+        ,{"id": 243, "teorica": 0, "practica": 0, "trabajos": 0}
+        ,{"id": 354, "teorica": 0, "practica": 0, "trabajos": 0}
     ]
 }
