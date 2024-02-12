@@ -1,3 +1,3 @@
 def info_notas(nombre,id_camper,nota_teorica,nota_practica,nota_trabajos):
-    L=f"\nEstudiante [Nombre: {nombre}] [ID: {id_camper}]\n Total: {nota_teorica}| Fecha: {nota_practica}| ID Comercial: {nota_trabajos}"
+    L=f"\nEstudiante [Nombre: {nombre}] [ID: {id_camper}]\n Nota teorica: {nota_teorica}\n Nota practica: {nota_practica}\n Nota trabajos: {nota_trabajos}"
     return L
