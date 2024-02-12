@@ -60,25 +60,9 @@ if quien == "Trainer" or quien == "trainer":
     else:
         print("Identificación incorrecta para un Trainer.")
 
-    ##-------------Pon aqui lo de campers------------------------------------##
-elif quien == "Camper" or quien == "camper":
-    print("Pon tu grupo: \nGrupos disponibles: ")
-    for i in range(len(us_camper)):
-        print(us_camper[i]) ##No está funcionando aqui(analizando)
-        i=i+1
-    grupo=str(input(""))
-    if any(usuario["nombres"] == grupo for usuario in us_camper):
-        identificacion=input("Pon tu ID de camper: \n")
-        if any(usuario["id"] == identificacion for usuario in us_camper[grupo]):
-            if True:
-                hacer_camp=int(input("Selecciona un número: \n 1. Ver notas\n 2. Ver estado \n 3. Retirarse"))
-                if hacer_camp==1:
-                    for i in range(len(us_camper)):
-                        notas = [notasJS for notas in us_camper[i] if notasJS == identificacion]
-    else:
-        print("Grupo no disponible")
     
     ##-----------------------Inicio de coordinación--------------------------##
 elif quien=="Coordinacion" or quien=="coordinacion":
     hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar"))##Aún no termine de escribir el menú, me distraje con la corrección del trainer jsjaja
-    
+    if hacer_cordi==1:
+        ##Lo de dani y su función :)
