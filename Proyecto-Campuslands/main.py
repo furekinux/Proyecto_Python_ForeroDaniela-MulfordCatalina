@@ -18,6 +18,7 @@ conjsons = open("DATA/salas.json")
 salasJS = json.load(conjsons)
 
 us_trainer=rolesJS["Campuslands"]["Trainer"]
+us_ruta=rolesJS["Campuslands"]["Grupos"]
 salo_trainers=salasJS["salas"]
 estado_cursando=campersJS["grados"]
 us_camper=campersJS["grados"]
@@ -102,3 +103,9 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                                 print(estudiando)
                         else:
                             print("No tienes salas asignadas.")
+     elif hacer_cordi==3: #Crear ruta
+        nueva_ruta=[]
+        j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
+        nueva_ruta.append(j)
+        us_ruta.append(nueva_ruta)
+        print(us_ruta)
