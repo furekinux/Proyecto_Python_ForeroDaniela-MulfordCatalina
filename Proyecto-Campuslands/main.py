@@ -1,4 +1,5 @@
-##Primer archivo de prueba
+#Catalina Mulford Monroy y Daniela Forero Ballen
+#Primer archivo de prueba
 import json
 import module as mod
 
@@ -103,7 +104,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                                 print(estudiando)
                         else:
                             print("No tienes salas asignadas.")
-     elif hacer_cordi==3: #Crear ruta
+    elif hacer_cordi==3: #Crear ruta
         nueva_ruta=[]
         j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
         nueva_ruta.append(j)
