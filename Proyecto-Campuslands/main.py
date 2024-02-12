@@ -1,5 +1,7 @@
 ##Primer archivo de prueba
 import json
+import module as mod
+
 con = open("DATA/campers.json")
 campersJS = json.load(con)
 
