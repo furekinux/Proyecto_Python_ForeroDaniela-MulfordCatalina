@@ -1,7 +1,7 @@
 {
     "grados":{
         "P1":[
-            {"id": 132, "nombres": "Luis", "apellidos": "none","fecha inicio": "1 febrero 2024","fecha final": "11 octubre 2024","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "cursando","riesgo": "none"}
+            {"id": 132, "nombres": "Luis", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "cursando","riesgo": "none"}
         ],
         "M1":[
             {"id": 243, "nombres": "Juan", "apellidos": "none","fecha inicio": "1 febrero 2024","fecha final": "11 octubre 2024","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "cursando","riesgo": "none"}
