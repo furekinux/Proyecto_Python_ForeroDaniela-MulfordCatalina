@@ -11,7 +11,7 @@
         ,"Grupos": [
             {"grupos":"P1","Ruta":"Java"},
             {"grupos":"M1","Ruta":"HTML"},
-            {"grupos":"A1","Ruta":"Note"}
+            {"grupos":"A1","Ruta":"Node"}
         ]
     }
 }
