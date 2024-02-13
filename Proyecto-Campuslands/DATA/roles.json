@@ -9,9 +9,9 @@
             {"id": 789, "nombres": "Johlver", "apellidos":"Pardo", "Grupos": "none"}
         ]
         ,"Grupos": [
-            {"grupos":"P1","Ruta":"Java","trainer":"Pedro"},
-            {"grupos":"M1","Ruta":"HTML","trainer":"Miguel"},
-            {"grupos":"J1","Ruta":"Node","trainer":"Johlver"}
+            {"grupos":"P1","Ruta":"Java","trainer":"Pedro","fecha inicio": "1 febrero 2024","fecha final": "11 octubre 2024"},
+            {"grupos":"M1","Ruta":"HTML","trainer":"Miguel","fecha inicio": "1 febrero 2024","fecha final": "11 octubre 2024"},
+            {"grupos":"J1","Ruta":"Node","trainer":"Johlver","fecha inicio": "1 febrero 2024","fecha final": "11 octubre 2024"}
         ]
     }
 }
