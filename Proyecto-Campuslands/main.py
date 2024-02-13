@@ -24,6 +24,7 @@ salo_trainers=salasJS["salas"]
 estado_cursando=campersJS["grados"]
 us_camper=campersJS["grados"]
 us_coordinacion=rolesJS["Campuslands"]["Coordinacion"]
+notas_camper=notasJS["notas"]
 
 #Ingresar usuario:
 quien=str(input("Quien desea ingresar?(Trainer,Coordinación)(No uses tildes o puntos)\n"))
