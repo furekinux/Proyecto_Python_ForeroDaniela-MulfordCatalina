@@ -135,9 +135,21 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             elif menu_estado==3:
                 print("Que problematico es esto de existir.")
                                 
-        elif hacer_cordi==3: #Crear ruta
+    elif hacer_cordi==3: #Crear ruta
             nueva_ruta=[]
             j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
             nueva_ruta.append(j)
             us_ruta.append(nueva_ruta)
             print(us_ruta)
+
+    elif hacer_cordi==5:#Proceso, no funciona :)
+        who=input(" 1. Listar trainers\n 2. Listar camper y trainer por ruta\n")
+
+        if who==1:
+            lis_trainers=[]
+            for queso in us_trainer:
+                lis_trainers.append("nombres")
+            print(lis_trainers)
+        elif who==2:
+            delirio=rolesJS["Grupos"]
+            print(delirio)
