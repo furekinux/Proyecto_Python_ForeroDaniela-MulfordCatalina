@@ -106,20 +106,26 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 else:
                     i=i+1
         
-        elif menu_notas==4:
+        elif menu_notas==4: ##EN PROCESO ESPERANDO AL PROFE
             
-            rta=int(input("\nQue nota va a editar?\n 1. Teorica\n 2. Practica\n 3. Trabajos\n 4. Todas\n"))
+            group=str(input("\nQue grupo desea editar? \n"))
+            notas_grupo=notas_camper[group]
+            
+            for i in range(len(notas_grupo)):
+                print(notas_grupo[i])
+            identific=int(input("\nA que estudiante le va a eliminar la nota? \n"))
+            camper_analisis=[]
+            for i in range(len(notas_grupo)):
+                grades=notas_grupo[i]
+                if grades["id"]==identific:
+                    print(notas_grupo[i])
+                else:
+                    i=i+1
 
+            rta=int(input("\nQue nota va a eliminar?\n 1. Teorica\n 2. Practica\n 3. Trabajos\n 4. Todas\n"))
+        
             if rta==1:
-                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
-
-            elif rta==2:
-                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
-            
-            elif rta==3:
-                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
-            
-            elif rta==4:
+                notas_grupo[i]
                 print(f"\n{notas_grupo[i]}\n")
 
                 current_grade=open("DATA/notas.json","w")
@@ -129,8 +135,50 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 grade_delete=json.dumps(current)
                 current_grade.write(grade_delete)
                 
-                print(notas_grupo)
+                print(notas_grupo[i])
+
+            elif rta==2:
+                notas_grupo[i]
+                print(f"\n{notas_grupo[i]}\n")
+
+                current_grade=open("DATA/notas.json","w")
+                current=json.loads(current_grade) ##Converted
+                current["notas"][group][i]["practica"]=0
                 
+                grade_delete=json.dumps(current)
+                current_grade.write(grade_delete)
+                
+                print(notas_grupo[i])
+
+
+            elif rta==3:
+                notas_grupo[i]
+                print(f"\n{notas_grupo[i]}\n")
+
+                current_grade=open("DATA/notas.json","w")
+                current=json.loads(current_grade) ##Converted
+                current["notas"][group][i]["trabajos"]=0
+                
+                grade_delete=json.dumps(current)
+                current_grade.write(grade_delete)
+                
+                print(notas_grupo[i])
+            
+            elif rta==4:
+
+                print(f"\n{notas_grupo[i]}\n")
+
+                current_grade=open("DATA/notas.json","w")
+                current=json.loads(current_grade) ##Converted
+                current["notas"][group][i]["teorica"]=0
+                current["notas"][group][i]["practica"]=0
+                current["notas"][group][i]["trabajos"]=0
+                
+                grade_delete=json.dumps(current)
+                current_grade.write(grade_delete)
+                
+                print(notas_grupo[i])
+                                                        ##HASTA ACA LLEGA EN PROCESO
             else:
                 print("Esta opcion no esta disponible.")
 
