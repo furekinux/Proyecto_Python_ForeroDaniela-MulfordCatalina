@@ -90,9 +90,36 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 else:
                     i=i+1
         elif menu_notas==3:
-            print("En proceso :D")
-        
-        
+            group=str(input("\nQue grupo desea editar? \n"))
+            notas_grupo=notas_camper[group]
+            
+            for i in range(len(notas_grupo)):
+                print(notas_grupo[i])
+            identific=int(input("\nQue estudiante va a editar por su listar? \n"))
+            camper_analisis=[]
+            for i in range(len(notas_grupo)):
+                grades=notas_grupo[i]
+                if grades["id"]==identific:
+                    print(notas_grupo[i])
+                else:
+                    i=i+1
+
+            rta=int(input("\nQue nota va a editar?\n 1. Teorica\n 2. Practica\n 3. Trabajos\n 4. Todas\n"))
+
+            if rta==1:
+                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
+
+            elif rta==2:
+                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
+            
+            elif rta==3:
+                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
+            
+            elif rta==4:
+                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
+                gradez=change.split("")
+            else:
+                print("Esta opcion no esta disponible.")
 
     if hacer_cordi==2:#Estado
             menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
