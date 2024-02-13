@@ -90,6 +90,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                     print(notas_grupo[i])
                 else:
                     i=i+1
+                    
         elif menu_notas==3:
             group=str(input("\nQue grupo desea editar? \n"))
             notas_grupo=notas_camper[group]
@@ -98,13 +99,15 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 print(notas_grupo[i])
             identific=int(input("\nQue estudiante va a editar por su listar? \n"))
             camper_analisis=[]
-            for i in range(len(notas_grupo)):
+            for i in range(len(notas_grupo)): ##No funciona
                 grades=notas_grupo[i]
                 if grades["id"]==identific:
                     print(notas_grupo[i])
                 else:
                     i=i+1
-
+        
+        elif menu_notas==4:
+            
             rta=int(input("\nQue nota va a editar?\n 1. Teorica\n 2. Practica\n 3. Trabajos\n 4. Todas\n"))
 
             if rta==1:
@@ -117,8 +120,17 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
             
             elif rta==4:
-                change=int(input("\nA que nota se va a cambiar? \n"))##EN PROCESO
-                gradez=change.split("")
+                print(f"\n{notas_grupo[i]}\n")
+
+                current_grade=open("DATA/notas.json","w")
+                current=json.loads(current_grade) ##Converted
+                current["notas"][group][i]["teorica"]=0
+                
+                grade_delete=json.dumps(current)
+                current_grade.write(grade_delete)
+                
+                print(notas_grupo)
+                
             else:
                 print("Esta opcion no esta disponible.")
 
