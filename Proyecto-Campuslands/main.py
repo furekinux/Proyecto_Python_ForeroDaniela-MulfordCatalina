@@ -74,13 +74,13 @@ elif quien=="Coordinacion" or quien=="coordinacion":
     if hacer_cordi==1: ##EDITAR/VER
         menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
         
-        if menu_notas==1: 
+        if menu_notas==1: ##VER NOTAS
             group=str(input("\nQue grupo desea revisar? \n"))##SELECCIÓN DE GRUPO A REVISAR
             notas_grupo=notas_camper[group]
             for i in range(len(notas_grupo)):
                 print(notas_grupo[i])
 
-        elif menu_notas==2:
+        elif menu_notas==2: ##VER NOTAS ESPECIFICAS
             group=str(input("\nA que grupo pertenece? \n"))##SELECCIÓN DE GRUPO A REVISAR
             notas_grupo=notas_camper[group]
             identific=int(input("\nCual es su identificacion? \n"))
@@ -88,10 +88,8 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 grades=notas_grupo[i]
                 if grades["id"]==identific:
                     print(notas_grupo[i])
-                else:
-                    i=i+1
                     
-        elif menu_notas==3:
+        elif menu_notas==3: ##PONER NOTAS
             group=str(input("\nQue grupo desea editar? \n"))
             notas_grupo=notas_camper[group]
             
@@ -106,9 +104,9 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 else:
                     i=i+1
         
-        elif menu_notas==4: ##EN PROCESO ESPERANDO AL PROFE
+        elif menu_notas==4: ##EN PROCESO ESPERANDO AL PROFE (ELIMINAR NOTAS)
             
-            group=str(input("\nQue grupo desea editar? \n"))
+            group=str(input("\nQue grupo desea visualizar para borrar? \n"))
             notas_grupo=notas_camper[group]
             
             for i in range(len(notas_grupo)):
