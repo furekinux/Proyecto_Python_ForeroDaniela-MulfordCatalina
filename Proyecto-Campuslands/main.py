@@ -80,33 +80,52 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 print("Tus grupos son:")
                 for gru in grupos:
                     print({gru})
-        elif hacer_cordi==2:
-            print("No logro que funciones")
-
-    elif hacer_cordi==2:#Estado
-        menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
-        #Todos los de un mismo estado
         
-        if menu_estado==1:
-            opcion1=str(input("Que estado deseas buscar?(Ingreso, Inscrito, Aprobado,Cursando, Graduado, Expulsado, Retirado)\n").lower)
+
+        if hacer_cordi==2:#Estado
+            menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
             
-            if any(estado["estado"] == "cursando" for estado in estado_cursando):
-                if True:
-                    cursando = []
-                    for grupo_estado, grupito in cursando.items():
-                        for clase in grupito:
-                            for buscando, info in clase.items():
-                                if info.get("estado") == opcion1:
-                                    cursando.append({grupo_estado: info})
-                        if cursando:
-                            print("Tu horario es:")
-                            for estudiando in cursando:
-                                print(estudiando)
-                        else:
-                            print("No tienes salas asignadas.")
-    elif hacer_cordi==3: #Crear ruta
-        nueva_ruta=[]
-        j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
-        nueva_ruta.append(j)
-        us_ruta.append(nueva_ruta)
-        print(us_ruta)
+            #Todos los de un mismo estado
+            if menu_estado==1:
+                opcion1=str(input("Que estado deseas buscar?(Ingreso, Inscrito, Aprobado,Cursando, Graduado, Expulsado, Retirado)\n").lower())
+                otro_cursando=[]
+                cursando = []
+
+                if opcion1=="cursando":
+                    for grado, estudiantes in campersJS["grados"].items():
+                        for estudiante in estudiantes:
+                            if estudiante["estado"].lower() == opcion1:
+                                cursando.append(estudiante)
+                    if cursando:
+                        print(f"Estudiantes en estado '{opcion1}':")
+                        for estudiante in cursando:
+                            print(f"Nombre: {estudiante['nombres']} {estudiante['apellidos']}, estado: {estudiante['estado']}")
+                    else:
+                        print(f"No se encontraron estudiantes en estado '{opcion1}'.")
+                
+                elif opcion1!="cursando":
+                    for estudiante in genteJS["gente"]:
+                        if estudiante["estado"].lower() == opcion1:
+                            otro_cursando.append(estudiante)
+                    if otro_cursando:
+                        print(f"Estudiantes en estado '{opcion1}':")
+                        for estudiante in otro_cursando:
+                            print(f"Nombre: {estudiante['nombres']} {estudiante['apellidos']}, estado: {estudiante['estado']}")
+                    else:
+                        print(f"No se encontraron estudiantes en estado '{opcion1}'.")
+            
+            #Ver estado de un estudiante en especifico
+            elif menu_estado==2:
+                print("Ya no másssssss")
+
+
+            #Editar un estado:
+            elif menu_estado==3:
+                print("Que problematico es esto de existir.")
+                                
+        elif hacer_cordi==3: #Crear ruta
+            nueva_ruta=[]
+            j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
+            nueva_ruta.append(j)
+            us_ruta.append(nueva_ruta)
+            print(us_ruta)
