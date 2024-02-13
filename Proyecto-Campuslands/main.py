@@ -170,7 +170,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             print(us_ruta)
 
     elif hacer_cordi==5:#Proceso, no funciona :)
-        who=input(" 1. Listar trainers\n 2. Listar camper y trainer por ruta\n")
+        who=int(input(" 1. Listar trainers\n 2. Listar camper y trainer por ruta\n"))
 
         if who==1:
             lis_trainers=[]
