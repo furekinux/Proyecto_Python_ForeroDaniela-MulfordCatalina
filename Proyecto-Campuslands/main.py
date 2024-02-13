@@ -69,7 +69,7 @@ if quien == "Trainer" or quien == "trainer":
     
     ##-----------------------Inicio de coordinación--------------------------##
 elif quien=="Coordinacion" or quien=="coordinacion":
-    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n"))
+    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n 5. Listar"))
     
     if hacer_cordi==1: ##EDITAR/VER
         menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
