@@ -9,9 +9,9 @@
             {"id": 789, "nombres": "Johlver", "apellidos":"Pardo", "Grupos": "none"}
         ]
         ,"Grupos": [
-            {"grupos":"P1","Ruta":"Java"},
-            {"grupos":"M1","Ruta":"HTML"},
-            {"grupos":"A1","Ruta":"Node"}
+            {"grupos":"P1","Ruta":"Java","trainer":"Pedro"},
+            {"grupos":"M1","Ruta":"HTML""trainer":"Miguel"},
+            {"grupos":"J1","Ruta":"Node""trainer":"Johlver"}
         ]
     }
 }
