@@ -73,16 +73,28 @@ elif quien=="Coordinacion" or quien=="coordinacion":
     if hacer_cordi==1: ##EDITAR/VER
         menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
         
-        if hacer_cordi==1: 
+        if menu_notas==1: 
             group=str(input("\nQue grupo desea revisar? \n"))##SELECCIÓN DE GRUPO A REVISAR
-            grupos = [grupo["Grupos"] for grupo in notasJS if grupo["notas"] == group]
-            if grupos:
-                print("Tus grupos son:")
-                for gru in grupos:
-                    print({gru})
+            notas_grupo=notas_camper[group]
+            for i in range(len(notas_grupo)):
+                print(notas_grupo[i])
+
+        elif menu_notas==2:
+            group=str(input("\nA que grupo pertenece? \n"))##SELECCIÓN DE GRUPO A REVISAR
+            notas_grupo=notas_camper[group]
+            identific=int(input("\nCual es su identificacion? \n"))
+            for i in range(len(notas_grupo)):
+                grades=notas_grupo[i]
+                if grades["id"]==identific:
+                    print(notas_grupo[i])
+                else:
+                    i=i+1
+        elif menu_notas==3:
+            print("En proceso :D")
+        
         
 
-        if hacer_cordi==2:#Estado
+    if hacer_cordi==2:#Estado
             menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
             
             #Todos los de un mismo estado
