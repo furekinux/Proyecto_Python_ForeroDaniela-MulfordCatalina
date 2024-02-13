@@ -10,8 +10,8 @@
         ]
         ,"Grupos": [
             {"grupos":"P1","Ruta":"Java","trainer":"Pedro"},
-            {"grupos":"M1","Ruta":"HTML""trainer":"Miguel"},
-            {"grupos":"J1","Ruta":"Node""trainer":"Johlver"}
+            {"grupos":"M1","Ruta":"HTML","trainer":"Miguel"},
+            {"grupos":"J1","Ruta":"Node","trainer":"Johlver"}
         ]
     }
 }
