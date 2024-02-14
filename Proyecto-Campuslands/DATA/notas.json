@@ -1,7 +1,9 @@
 {
     "notas":{
         "P1":[
-        {"id": 132, "teorica": 0, "practica": 0, "trabajos": 0,"fundamentos":"none"}
+        {"id": 132, "teorica": 0, "practica": 0, "trabajos": 0,"fundamentos":"none"},
+        {"id": 465,"teorica": 10,"practica": 6,"trabajos": 26,"fundamentos":"none"}
+
         ],
         "M1":[
         {"id": 243, "teorica": 0, "practica": 0, "trabajos": 0,"fundamentos":"none"}
