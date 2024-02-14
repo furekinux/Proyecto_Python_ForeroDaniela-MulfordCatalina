@@ -74,20 +74,34 @@ elif quien=="Coordinacion" or quien=="coordinacion":
     if hacer_cordi==1: ##EDITAR/VER
         menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
         
-        if menu_notas==1: ##VER NOTAS
-            group=str(input("\nQue grupo desea revisar? \n"))##SELECCIÓN DE GRUPO A REVISAR
-            notas_grupo=notas_camper[group]
-            for i in range(len(notas_grupo)):
-                print(notas_grupo[i])
-
-        elif menu_notas==2: ##VER NOTAS ESPECIFICAS
+        if menu_notas==1: 
             group=str(input("\nA que grupo pertenece? \n"))##SELECCIÓN DE GRUPO A REVISAR
-            notas_grupo=notas_camper[group]
-            identific=int(input("\nCual es su identificacion? \n"))
-            for i in range(len(notas_grupo)):
-                grades=notas_grupo[i]
-                if grades["id"]==identific:
-                    print(notas_grupo[i])
+            current_grade_path = f"DATA/notas/notas_{group}.json"
+            notas_grupo=current_grade_path
+            with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                current_grade = json.load(json_file)
+            
+            print(f"\n ---GRUPO {group}---\n") ##IMPRIMIR GRUPO
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                print(current,"\n")
+
+        elif menu_notas==2: ##BUSCAR CAMPER JIJI
+            group=str(input("\nA que grupo pertenece? \n"))##SELECCIÓN DE GRUPO A REVISAR
+            current_grade_path = f"DATA/notas/notas_{group}.json"
+            notas_grupo=current_grade_path
+            with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                current_grade = json.load(json_file)
+            
+            print(f"\n ---GRUPO {group}---\n") ##IMPRIMIR GRUPO
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                print(current,"\n")
+            
+            identific=int(input("\nCual es su identificacion? \n")) ##BUSCAR E IMPRIMIR CAMPER
+            for camper in current_grade:
+                if camper["id"]==identific:
+                    print(camper)
                     
         elif menu_notas==3: ##PONER NOTAS
             group=str(input("\nQue grupo desea editar? \n"))
