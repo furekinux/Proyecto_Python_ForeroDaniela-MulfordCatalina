@@ -196,7 +196,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             else:
                 print("Esta opcion no esta disponible.")
         
-        elif menu_notas==4: ##EN PROCESO ESPERANDO AL PROFE (ELIMINAR NOTAS)
+        elif menu_notas==4: ##BOOOOOOORRRRRRRRRRRAAAAAAAAAAAAARRRRRRRRRRRRR NOTAAAAAAAAAAAAAAAAAAAS >:DDDD
             
             group=str(input("\nQue grupo desea editar? \n"))
             current_grade_path = f"DATA/notas/notas_{group}.json"
