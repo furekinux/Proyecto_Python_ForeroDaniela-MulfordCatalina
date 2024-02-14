@@ -271,6 +271,36 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             else:
                 print("Esta opcion no esta disponible.")
                 
+        elif menu_notas==5:
+            group=str(input("\nQue grupo desea editar sus fundamentos? \n"))
+            current_grade_path = f"DATA/notas/notas_{group}.json"
+            with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                current_grade = json.load(json_file)
+            print(f"\n ---GRUPO {group}---\n") ##IMPRIMIR GRUPO
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                print(current,"\n")
+
+            funda=str(input("\nQue fundamentos van a ser? \n"))
+
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["fundamentos"] = funda
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+
+            print(f"\n ---GRUPO {group}---\n")
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                print(current,"\n")
+        else:
+            print("Esta opcion no esta disponible")
+
+
 ##___________________________________________FIN EDICION Y LECTURA DE NOTAS_____________________________________________________
     
     if hacer_cordi==2:#Estado
