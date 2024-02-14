@@ -198,77 +198,76 @@ elif quien=="Coordinacion" or quien=="coordinacion":
         
         elif menu_notas==4: ##EN PROCESO ESPERANDO AL PROFE (ELIMINAR NOTAS)
             
-            group=str(input("\nQue grupo desea visualizar para borrar? \n"))
-            notas_grupo=notas_camper[group]
-            
-            for i in range(len(notas_grupo)):
-                print(notas_grupo[i])
+            group=str(input("\nQue grupo desea editar? \n"))
+            current_grade_path = f"DATA/notas/notas_{group}.json"
+            with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                current_grade = json.load(json_file)
+            print(f"\n ---GRUPO {group}---\n") ##IMPRIMIR GRUPO
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                print(current,"\n")
+    
             identific=int(input("\nA que estudiante le va a eliminar la nota? \n"))
-            camper_analisis=[]
-            for i in range(len(notas_grupo)):
-                grades=notas_grupo[i]
+            for i in range(len(current_grade)):
+                grades=current_grade[i]
                 if grades["id"]==identific:
-                    print(notas_grupo[i])
+                    print(current_grade[i])
                 else:
                     i=i+1
 
             rta=int(input("\nQue nota va a eliminar?\n 1. Teorica\n 2. Practica\n 3. Trabajos\n 4. Todas\n"))
         
             if rta==1:
-                notas_grupo[i]
-                print(f"\n{notas_grupo[i]}\n")
+                current_grade_path = f"DATA/notas/notas_{group}.json"
 
-                current_grade=open("DATA/notas.json","w")
-                current=json.loads(current_grade) ##Converted
-                current["notas"][group][i]["teorica"]=0
-                
-                grade_delete=json.dumps(current)
-                current_grade.write(grade_delete)
-                
-                print(notas_grupo[i])
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["teorica"] = 0
+
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
 
             elif rta==2:
-                notas_grupo[i]
-                print(f"\n{notas_grupo[i]}\n")
+                current_grade_path = f"DATA/notas/notas_{group}.json"
 
-                current_grade=open("DATA/notas.json","w")
-                current=json.loads(current_grade) ##Converted
-                current["notas"][group][i]["practica"]=0
-                
-                grade_delete=json.dumps(current)
-                current_grade.write(grade_delete)
-                
-                print(notas_grupo[i])
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["practica"] = 0
 
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
 
             elif rta==3:
-                notas_grupo[i]
-                print(f"\n{notas_grupo[i]}\n")
+                print(f"\n{current_grade[i]}\n")
+                current_grade_path = f"DATA/notas/notas_{group}.json"
 
-                current_grade=open("DATA/notas.json","w")
-                current=json.loads(current_grade) ##Converted
-                current["notas"][group][i]["trabajos"]=0
-                
-                grade_delete=json.dumps(current)
-                current_grade.write(grade_delete)
-                
-                print(notas_grupo[i])
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["trabajos"] = 0
+
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
             
             elif rta==4:
+                print(f"\n{current_grade[i]}\n")
+                current_grade_path = f"DATA/notas/notas_{group}.json"
 
-                print(f"\n{notas_grupo[i]}\n")
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["teorica"] = 0
+                current["practica"] = 0
+                current["trabajos"] = 0
 
-                current_grade=open("DATA/notas.json","w")
-                current=json.loads(current_grade) ##Converted
-                current["notas"][group][i]["teorica"]=0
-                current["notas"][group][i]["practica"]=0
-                current["notas"][group][i]["trabajos"]=0
-                
-                grade_delete=json.dumps(current)
-                current_grade.write(grade_delete)
-                
-                print(notas_grupo[i])
-                                                        ##HASTA ACA LLEGA EN PROCESO
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
             else:
                 print("Esta opcion no esta disponible.")
 
