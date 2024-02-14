@@ -69,7 +69,7 @@ if quien == "Trainer" or quien == "trainer":
     
     ##-----------------------Inicio de coordinación--------------------------##
 elif quien=="Coordinacion" or quien=="coordinacion":
-    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n 5. Listar"))
+    hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n 5. Listar\n"))
     
     if hacer_cordi==1: ##EDITAR/VER
         menu_notas=input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n")
@@ -214,12 +214,56 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             
             #Ver estado de un estudiante en especifico
             elif menu_estado==2:
-                print("Ya no másssssss")
-
-
+                opcion2=int(input("Pon la identificación del estudiante a buscar:\n"))
+                datico2=input("Pon el salon al que pertenece(si pertenece a uno)\n")
+                if datico2 in campersJS["grados"]:
+                    especifico = [estate["estado"] for estate in campersJS["grados"][datico2] if estate["id"] == opcion2]
+                    if especifico:
+                        for tarta in especifico:
+                            print(tarta)
+                elif  genteJS["gente"]:
+                    especifico = [estate["estado"] for estate in genteJS["gente"] if estate["id"] == opcion2]
+                    if especifico:
+                        for tarta in especifico:
+                            print(tarta)
+                else:
+                    print("No se encontro")
+                    
             #Editar un estado:
             elif menu_estado==3:
-                print("Que problematico es esto de existir.")
+                opcion3 = int(input("Pon la identificación del estudiante a buscar:\n"))
+                datico3=input("Pon el salon al que pertenece(si pertenece a uno)\n")
+                nuevo_estado=input("Pon el nuevo estado que tendra\n").lower()
+                if datico3 in campersJS["grados"]:
+                    especifico = [estate["estado"] for estate in campersJS["grados"][datico3] if estate["id"] == opcion3]
+                    if especifico:
+                        us_camper['estado'] = nuevo_estado
+
+                        if nuevo_estado=="cursando":
+                            with open('campers.json', 'w') as json_file:
+                                json.dump(campersJS, json_file)
+                                print(us_camper)
+                        elif nuevo_estado!="cursando":
+                            with open('gente.json', 'w') as json_file:
+                                json.dump(genteJS, json_file)
+                                print(genteJS)
+
+                elif  genteJS["gente"]:
+                    especifico = [estate["estado"] for estate in genteJS["gente"] if estate["id"] == opcion3]
+                    if especifico:
+                        genteJS['estado'] = nuevo_estado
+                        
+                        if nuevo_estado=="cursando":
+                            with open('campers.json', 'w') as json_file:
+                                json.dump(campersJS, json_file)
+                                print(us_camper)
+                        elif nuevo_estado!="cursando":
+                            with open('gente.json', 'w') as json_file:
+                                json.dump(genteJS, json_file)
+                                print(genteJS)
+
+                else:
+                    print("No se encontro")
                                 
     elif hacer_cordi==3: #Crear ruta
             nueva_ruta=[]
@@ -228,14 +272,23 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             us_ruta.append(nueva_ruta)
             print(us_ruta)
 
-    elif hacer_cordi==5:#Proceso, no funciona :)
+    elif hacer_cordi==4:#Asignar(parte de la hora)
+        id=int(input("Pon la identificacion del profesor que deseas asignar:\n"))
+        salo_trainers
+
+    elif hacer_cordi==5:#Listar
         who=int(input(" 1. Listar trainers\n 2. Listar camper y trainer por ruta\n"))
 
         if who==1:
             lis_trainers=[]
             for queso in us_trainer:
-                lis_trainers.append("nombres")
+                lis_trainers.append(queso["nombres"])
             print(lis_trainers)
+
         elif who==2:
-            delirio=rolesJS["Grupos"]
-            print(delirio)
+            for q in us_ruta:
+                print(q)
+
+
+else:
+    print("Se ingreso mal la información o no existe.")
