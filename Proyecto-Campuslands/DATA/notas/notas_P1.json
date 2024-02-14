@@ -1,1 +1,14 @@
+[    
+    {"id": 132,
+    "teorica": 4,
+    "practica": 5,
+    "trabajos": 2,
+    "fundamentos":"none"},
 
+    {"id": 465,
+    "teorica": 10,
+    "practica": 6,
+    "trabajos": 26,
+    "fundamentos":"none"}
+
+]
