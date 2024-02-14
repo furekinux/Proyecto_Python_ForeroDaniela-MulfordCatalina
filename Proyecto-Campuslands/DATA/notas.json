@@ -6,10 +6,13 @@
 
         ],
         "M1":[
-        {"id": 243, "teorica": 0, "practica": 0, "trabajos": 0,"fundamentos":"none"}
+        {"id": 243, "teorica": 0, "practica": 0, "trabajos": 0,"fundamentos":"none"},
+        {"id": 576,"teorica": 0,"practica": 0,"trabajos": 0,"fundamentos":"none"}
+        
         ],
         "J1":[
         {"id": 354, "teorica": 0, "practica": 0, "trabajos": 0,"fundamentos":"none"}
+            
         ]
     }
 }
