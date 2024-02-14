@@ -196,7 +196,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             else:
                 print("Esta opcion no esta disponible.")
         
-        elif menu_notas==4: ##BOOOOOOORRRRRRRRRRRAAAAAAAAAAAAARRRRRRRRRRRRR NOTAAAAAAAAAAAAAAAAAAAS >:DDDD
+        elif menu_notas==4: 
             
             group=str(input("\nQue grupo desea editar? \n"))
             current_grade_path = f"DATA/notas/notas_{group}.json"
@@ -354,40 +354,35 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                     
             #Editar un estado:
             elif menu_estado==3:
+                pan=[]
+                
                 opcion3 = int(input("Pon la identificación del estudiante a buscar:\n"))
                 datico3=input("Pon el salon al que pertenece(si pertenece a uno)\n")
                 nuevo_estado=input("Pon el nuevo estado que tendra\n").lower()
                 if datico3 in campersJS["grados"]:
-                    especifico = [estate["estado"] for estate in campersJS["grados"][datico3] if estate["id"] == opcion3]
-                    if especifico:
-                        us_camper['estado'] = nuevo_estado
+                    for camper in campersJS["grados"][datico3]:
+                        if camper["id"] == opcion3:
+                            camper['estado'] = nuevo_estado
+                            pan.append(camper)
+                            agua = [item for item in us_camper[datico3] if int(item["id"]) != opcion3]
+                            campersJS["grados"][datico3] = agua 
+                            with open("gente.json", "w") as file:
+                                json.dump(pan, file, indent=4)
+                            
+                elif datico3 in genteJS["gente"]:
+                    if nuevo_estado!="cursando":
+                        if datico3 in genteJS["gente"]:
+                            for camper in genteJS["gente"][datico3]:
+                                if camper["id"] == opcion3:
+                                    camper['estado'] = nuevo_estado
+                                    pan.append(camper)
+                                    print(pan)
+                                    print(genteJS)            
 
-                        if nuevo_estado=="cursando":
-                            with open('campers.json', 'w') as json_file:
-                                json.dump(campersJS, json_file)
-                                print(us_camper)
-                        elif nuevo_estado!="cursando":
-                            with open('gente.json', 'w') as json_file:
-                                json.dump(genteJS, json_file)
-                                print(genteJS)
 
-                elif  genteJS["gente"]:
-                    especifico = [estate["estado"] for estate in genteJS["gente"] if estate["id"] == opcion3]
-                    if especifico:
-                        genteJS['estado'] = nuevo_estado
-                        
-                        if nuevo_estado=="cursando":
-                            with open('campers.json', 'w') as json_file:
-                                json.dump(campersJS, json_file)
-                                print(us_camper)
-                        elif nuevo_estado!="cursando":
-                            with open('gente.json', 'w') as json_file:
-                                json.dump(genteJS, json_file)
-                                print(genteJS)
-
+                
                 else:
-                    print("No se encontro")
-                                
+                    print("No se encontro")                    
     elif hacer_cordi==3: #Crear ruta
             nueva_ruta=[]
             j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
