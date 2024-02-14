@@ -1,17 +1,23 @@
 ##Aqui va a estar el menu por pasos en proceso aun, si se agregan cambios, usa el main.py y luego se actualizar aqui
+
 import json
 import module as mod
 
 con = open("DATA/campers.json")
 campersJS = json.load(con)
+
 conec = open("DATA/gente.json")
 genteJS = json.load(conec)
+
 conecta = open("DATA/notas.json")
 notasJS = json.load(conecta)
+
 conlos = open("DATA/roles.json")
 rolesJS = json.load(conlos)
+
 conjsons = open("DATA/salas.json")
 salasJS = json.load(conjsons)
+
 us_trainer=rolesJS["Campuslands"]["Trainer"]
 us_ruta=rolesJS["Campuslands"]["Grupos"]
 salo_trainers=salasJS["salas"]
@@ -23,60 +29,77 @@ ultimate_boolean=True
 
 #Ingresar usuario:
 while ultimate_boolean:
-    quien=str(input("Quien desea ingresar?(Trainer,Coordinación)(No uses tildes o puntos)\n"))
+    quien=str(input("\nQuien desea ingresar?(Trainer,Coordinación)(No uses tildes o puntos)\n"))
 #         Trainer:
     if quien == "Trainer" or quien == "trainer":
         identificacion=int(input("Pon tu identificación: \n"))
 
         if any(int(usuario["id"]) == identificacion for usuario in us_trainer):
-            while ultimate_boolean:
+            
+            while ultimate_boolean: ##MENU TRAINER
+
                 if True:
-                    while ultimate_boolean:
-                        hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n 3. Volver\n"))
+                    hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n 3. Volver\n"))
 
-                        if hacer_trainer == 1:
-                            grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["id"] == identificacion]
-                            if grupos:
-                                print("Tus grupos son:")
-                                for gru in grupos:
-                                    print({gru})
-                                else:
-                                    print("No hay grupos asignados.")
-                            elec=str(input("Volver al menu de trainer? y/n\n"))
-                            if elec=="y" or elec=="Y":
-                                break
-                            elif elec=="n" or elec=="N":
-                                ultimate_boolean=True
-
-                        elif hacer_trainer==2:
-                            trainer_salones = []
-                            for salon_nombre, clases in salo_trainers.items():
-                                for clase in clases:
-                                    for nombre_clase, info in clase.items():
-                                        if info.get("id") == identificacion:
-                                            trainer_salones.append({salon_nombre: info})
-                                
-                            if trainer_salones:
-                                print("Tu horario es:")
-                                for sala in trainer_salones:
-                                    print(sala)
-                                
+                    if hacer_trainer == 1:
+                        grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["id"] == identificacion]
+                        if grupos:
+                            print("Tus grupos son:")
+                            for gru in grupos:
+                                print({gru})
                             else:
-                                print("No tienes salas asignadas.")
-                            elec=str(input("Volver al menu de trainer? y/n\n"))
-                            if elec=="y" or elec=="Y":
-                                break
-                            elif elec=="n" or elec=="N":
-                                ultimate_boolean=True
-
+                                print("No hay grupos asignados.")
                         elec=str(input("Volver al menu de trainer? y/n\n"))
                         if elec=="y" or elec=="Y":
-                            break
-                        elif elec=="n" or elec=="N":
                             ultimate_boolean=True
+                        elif elec=="n" or elec=="N":
+                            break
+
+                    elif hacer_trainer==2:
+                        trainer_salones = []
+                        for salon_nombre, clases in salo_trainers.items():
+                            for clase in clases:
+                                for nombre_clase, info in clase.items():
+                                    if info.get("id") == identificacion:
+                                        trainer_salones.append({salon_nombre: info})
+                                
+                        if trainer_salones:
+                            print("Tu horario es:")
+                            for sala in trainer_salones:
+                                print(sala)
+                            
+                        else:
+                            print("No tienes salas asignadas.")
+                        elec=str(input("Volver al menu de trainer? y/n\n"))
+                        if elec=="y" or elec=="Y":
+                            ultimate_boolean=True 
+                        elif elec=="n" or elec=="N":
+                            break
+
+                elec=str(input("Volver al inicio de sesion? y/n\n"))
+                if elec=="y" or elec=="Y":
+                    break
+                elif elec=="n" or elec=="N":
+                    ultimate_boolean=True
 
         else:
             print("Identificación incorrecta para un Trainer.\n")
+            elec=0
+            elec=str(input("\nVolver al inicio de sesion? y/n\n"))
+            if elec=="y" or elec=="Y":
+                ultimate_boolean=True
+            elif elec=="n" or elec=="N":
+                break
+            else:
+                while elec!="y" or elec=="Y" or elec=="n" or elec=="N":
+                    elec=str(input("\nVolver al inicio de sesion? y/n\n"))
+                    if elec=="y" or elec=="Y":
+                        ultimate_boolean=True
+                    elif elec=="n" or elec=="N":
+                        break
+                    else:
+                        print("No se entendio su solicitud, vuelva a intentar")
+                    
 
 ##-----------------------Inicio de coordinación--------------------------##
     elif quien=="Coordinacion" or quien=="coordinacion":
@@ -431,7 +454,8 @@ while ultimate_boolean:
     
     else:
         print("Se ingreso mal la información o no existe.")
-    elec=str(input("\nFinalizar? y/n\n")) ## FINALIZAR CODIGO GENERAL!!!!!!!!!!!
+    
+    elec=str(input("Volver al inicio de sesion? y/n\n"))
     if elec=="y" or elec=="Y":
         break
     elif elec=="n" or elec=="N":
