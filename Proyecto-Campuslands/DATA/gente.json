@@ -1,7 +1,7 @@
 {
     "gente":[
-         {"id": 888, "nombres": "Luis", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "cursando","riesgo": "none"}
-        ,{"id": 999, "nombres": "Juan", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "cursando","riesgo": "none"}
+         {"id": 888, "nombres": "Luis", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "aprobado","riesgo": "none"}
+        ,{"id": 999, "nombres": "Juan", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "expulsado","riesgo": "none"}
         ,{"id": 666, "nombres": "Maria", "apellidos": "none","direccion": "none","acudiente": "none", "contacto_celu": 0,"contacto_fijo": 0,"estado": "retirado","riesgo": "none"}
         ]
 }
