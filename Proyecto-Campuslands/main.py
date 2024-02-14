@@ -103,20 +103,98 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                 if camper["id"]==identific:
                     print(camper)
                     
-        elif menu_notas==3: ##PONER NOTAS
-            group=str(input("\nQue grupo desea editar? \n"))
-            notas_grupo=notas_camper[group]
+        elif menu_notas==3: ##EDICION NOTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS :DDDDDDDDDD
+            group=str(input("\nQue grupo desea editar? \n")) ##SELECCIÓN DE GRUPO A REVISAR
+            current_grade_path = f"DATA/notas/notas_{group}.json"
+            notas_grupo=current_grade_path
+            with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                current_grade = json.load(json_file)
             
-            for i in range(len(notas_grupo)):
-                print(notas_grupo[i])
-            identific=int(input("\nQue estudiante va a editar por su listar? \n"))
-            camper_analisis=[]
-            for i in range(len(notas_grupo)): ##No funciona
-                grades=notas_grupo[i]
+            print(f"\n ---GRUPO {group}---\n") ##IMPRIMIR GRUPO
+            for i in range(len(current_grade)):
+                current = current_grade[i]
+                print(current,"\n")
+
+            identific=int(input("\nCual es su identificacion? \n")) ##BUSCAR E IMPRIMIR CAMPER
+            for i in range(len(current_grade)):
+                grades=current_grade[i]
                 if grades["id"]==identific:
-                    print(notas_grupo[i])
+                    print(current_grade[i])
                 else:
                     i=i+1
+
+            rta=int(input("\nQue nota va a editar?\n 1. Teorica\n 2. Practica\n 3. Trabajos\n 4. Todas\n"))
+
+            if rta==1:
+                change=int(input("\nA que nota se va a cambiar nota teorica? \n"))##EN PROCESO
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["teorica"] = change
+
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
+
+            elif rta==2:
+                change=int(input("\nA que nota se va a cambiar nota practica? \n"))##EN PROCESO
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["practica"] = change
+
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
+            
+            elif rta==3:
+                change=int(input("\nA que nota se va a cambiar nota trabajos? \n"))##EN PROCESO
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["trabajos"] = change
+
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
+            
+            elif rta==4: ##EDITAR TODAS LAS NOTAS DEL CAMPPPPPPPPPPPPPPPPPEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRR
+                change=int(input("\nA que nota se va a cambiar nota teorica? \n"))##EN PROCESO
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["teorica"] = change
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+
+                change=int(input("\nA que nota se va a cambiar nota practica? \n"))##EN PROCESO
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["practica"] = change
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+
+                change=int(input("\nA que nota se va a cambiar nota trabajos? \n"))##EN PROCESO
+                current_grade_path = f"DATA/notas/notas_{group}.json"
+                with open(current_grade_path, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["trabajos"] = change
+                with open(current_grade_path, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
+
+            else:
+                print("Esta opcion no esta disponible.")
         
         elif menu_notas==4: ##EN PROCESO ESPERANDO AL PROFE (ELIMINAR NOTAS)
             
