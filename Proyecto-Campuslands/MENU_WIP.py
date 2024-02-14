@@ -1,4 +1,4 @@
-
+##MENU EN PROGRESO, SI HAY ACTUALIZACION POR FAVOR MODIFICAR EN MAIN ;-;
 import json
 import module as mod
 
@@ -31,83 +31,60 @@ while ultimate_boolean:
     quien=str(input("\nQuien desea ingresar?(Trainer,Coordinación)(No uses tildes o puntos)\n"))
 #         Trainer:
     if quien == "Trainer" or quien == "trainer":
-        identificacion=int(input("Pon tu identificación: \n"))
+        
+        while ultimate_boolean:
+            identificacion=int(input("Pon tu identificación: \n"))
+            if any(int(usuario["id"]) == identificacion for usuario in us_trainer):
+                
+                while ultimate_boolean: ##MENU TRAINER
 
-        if any(int(usuario["id"]) == identificacion for usuario in us_trainer):
-            
-            while ultimate_boolean: ##MENU TRAINER
+                    if True:
+                        hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n"))
 
-                if True:
-                    hacer_trainer=int(input("Selecciona un número:\n 1. Ver grupo(s)\n 2. Ver salas y horarios\n 3. Volver\n"))
+                        if hacer_trainer == 1:
+                            grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["id"] == identificacion]
+                            if grupos:
+                                print("Tus grupos son:")
+                                for gru in grupos:
+                                    print({gru})
+                                else:
+                                    print("No hay grupos asignados.")
 
-                    if hacer_trainer == 1:
-                        grupos = [grupo["Grupos"] for grupo in us_trainer if grupo["id"] == identificacion]
-                        if grupos:
-                            print("Tus grupos son:")
-                            for gru in grupos:
-                                print({gru})
+                        elif hacer_trainer==2:
+                            trainer_salones = []
+                            for salon_nombre, clases in salo_trainers.items():
+                                for clase in clases:
+                                    for nombre_clase, info in clase.items():
+                                        if info.get("id") == identificacion:
+                                            trainer_salones.append({salon_nombre: info})
+                            if trainer_salones:
+                                print("Tu horario es:")
+                                for sala in trainer_salones:
+                                    print(sala)
                             else:
-                                print("No hay grupos asignados.")
-                        elec=str(input("Volver al menu de trainer? y/n\n"))
-                        if elec=="y" or elec=="Y":
-                            ultimate_boolean=True
-                        elif elec=="n" or elec=="N":
-                            break
-
-                    elif hacer_trainer==2:
-                        trainer_salones = []
-                        for salon_nombre, clases in salo_trainers.items():
-                            for clase in clases:
-                                for nombre_clase, info in clase.items():
-                                    if info.get("id") == identificacion:
-                                        trainer_salones.append({salon_nombre: info})
-                                
-                        if trainer_salones:
-                            print("Tu horario es:")
-                            for sala in trainer_salones:
-                                print(sala)
-                            
-                        else:
-                            print("No tienes salas asignadas.")
+                                print("No tienes salas asignadas.")
                         elec=str(input("Volver al menu de trainer? y/n\n"))
                         if elec=="y" or elec=="Y":
                             ultimate_boolean=True 
                         elif elec=="n" or elec=="N":
                             break
-
-                elec=str(input("Volver al inicio de sesion? y/n\n"))
-                if elec=="y" or elec=="Y":
-                    break
-                elif elec=="n" or elec=="N":
-                    ultimate_boolean=True
-
-        else:
-            print("Identificación incorrecta para un Trainer.\n")
-            elec=0
-            elec=str(input("\nVolver al inicio de sesion? y/n\n"))
+            else:
+                print("Identificación incorrecta para un Trainer.\n")
+            elec=str(input("Volver al ingreso de trainer? y/n\n"))
             if elec=="y" or elec=="Y":
-                ultimate_boolean=True
+                ultimate_boolean=True 
             elif elec=="n" or elec=="N":
                 break
-            else:
-                while elec!="y" or elec=="Y" or elec=="n" or elec=="N":
-                    elec=str(input("\nVolver al inicio de sesion? y/n\n"))
-                    if elec=="y" or elec=="Y":
-                        ultimate_boolean=True
-                    elif elec=="n" or elec=="N":
-                        break
-                    else:
-                        print("No se entendio su solicitud, vuelva a intentar")
-                    
+            
 
 ##-----------------------Inicio de coordinación--------------------------##
     elif quien=="Coordinacion" or quien=="coordinacion":
-        hacer_cordi=int(input("Selecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n 5. Listar\n"))
     ## ___________________________________EDICION Y LECTURA DE NOTAS__________________________________________
         while ultimate_boolean:
+            hacer_cordi=int(input("\nSelecciona un número: \n 1. Editar/ver notas\n 2. Estado \n 3. Crear rutas\n 4. Asignar\n 5. Listar\n"))
             if hacer_cordi==1: ##EDITAR/VER
                 while ultimate_boolean:
-                    menu_notas=int(input("Deseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n"))
+                    menu_notas=int(input("\nDeseas:\n 1. Ver notas salon.\n 2. Ver notas estudiante.\n 3. Poner nota.\n 4. Quitar nota.\n 5. Modificar/Borrar fundamentos.\n"))
                     if menu_notas==1: 
                         group=str(input("\nQue grupo desea visualizar? \n"))##SELECCIÓN DE GRUPO A REVISAR
                         current_grade_path = f"DATA/notas/notas_{group}.json"
@@ -255,7 +232,6 @@ while ultimate_boolean:
                                     with open(current_grade_path, 'w', encoding='utf-8') as json_file:
                                         json.dump(current_grade, json_file)
                                     print(current_grade)
-
                                 else:
                                         print("Esta opcion no esta disponible.")
                                             
@@ -295,6 +271,7 @@ while ultimate_boolean:
             ##___________________________________________FIN EDICION Y LECTURA DE NOTAS_____________________________________________________
                 
             if hacer_cordi==2:#Estado
+                while ultimate_boolean:
                     menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
                     
                     #Todos los de un mismo estado
@@ -378,7 +355,15 @@ while ultimate_boolean:
 
                         else:
                             print("No se encontro")
-                                        
+                    else:
+                        print("Esta opcion no esta disponible o no existe")
+                    
+                    elec=str(input("\nVolver al menu de estado? y/n\n"))
+                    if elec=="y" or elec=="Y":
+                        ultimate_boolean=True
+                    elif elec=="n" or elec=="N":
+                        break
+   
             elif hacer_cordi==3: #Crear ruta
                     nueva_ruta=[]
                     j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
@@ -402,7 +387,7 @@ while ultimate_boolean:
                 elif who==2:
                     for q in us_ruta:
                         print(q)
-            elec=str(input("\nVolver al menu de notas? y/n\n"))
+            elec=str(input("\nVolver al menu general de coordinacion? y/n\n"))
             if elec=="y" or elec=="Y":
                 ultimate_boolean=True
             elif elec=="n" or elec=="N":
@@ -410,10 +395,10 @@ while ultimate_boolean:
     else:
         print("\nSe ingreso mal la información o no existe.\n")
     
-    elec=str(input("Finalizar? y/n (Seleccionar n hara que vuelva al inicio de sesion)\n"))
+    elec=str(input("\nVolver a empezar sesion? y/n\n"))
     if elec=="y" or elec=="Y":
-        break
-    elif elec=="n" or elec=="N":
         ultimate_boolean=True
+    elif elec=="n" or elec=="N":
+        break
     else:
         break
