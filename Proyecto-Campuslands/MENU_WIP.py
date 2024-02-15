@@ -1,4 +1,4 @@
-##WIIIIIIIIIIIIIIIIII
+
 import json
 import module as mod
 
@@ -28,7 +28,7 @@ ultimate_boolean=True
 
 #Ingresar usuario:
 while ultimate_boolean:
-    quien=str(input("\nQuien desea ingresar?(Trainer,Coordinación)(No uses tildes o puntos)\n"))
+    quien=str(input("\nQuien desea ingresar?(Trainer,Coordinación,Nuevo Ingreso)(No uses tildes o puntos)\n"))
 #         Trainer:
     if quien == "Trainer" or quien == "trainer":
         
@@ -385,6 +385,40 @@ while ultimate_boolean:
                 ultimate_boolean=True
             elif elec=="n" or elec=="N":
                 break
+    elif quien=="nuevo ingreso" or quien=="Nuevo Ingreso":
+        while ultimate_boolean:
+            ##LAS MATRICULAS NO ESTAN FUNCIONANDO T_T
+            hacer_new=int(input("\nBienvenido aspirante!\n 1. Camper de nuevo ingreso\n 2. Camper antiguo\n"))
+            if hacer_new==1:
+                print("Ingrese sus datos a continuacion: ")
+                my_id=str(input("Escribe tu numero de identificacion: "))
+                my_name=str(input("Escribe tus nombres: "))
+                my_secname=str(input("Escribe tus apellidos: "))
+                hey_info = f"DATA\gente.json"
+                with open(hey_info, 'r', encoding='utf-8') as json_file:
+                    informasmax = json.load(json_file)
+
+                informasmax["gente"].append({
+                    'id': my_id,
+                    'nombres': my_name,
+                    'apellidos': my_secname,
+                    'trabajos': 0,
+                    'fundamentos': "none"})
+                
+                with open(informasmax, 'w') as file:
+                    json.dump(informasmax, file, indent=4)
+                print(informasmax)
+
+            elif hacer_new==2:
+                hey_info = f"DATA\gente.json"
+                with open(hey_info, 'r', encoding='utf-8') as json_file:
+                    current_grade = json.load(json_file)
+                current = current_grade[i]
+                current["teorica"] = 0
+                with open(hey_info, 'w', encoding='utf-8') as json_file:
+                    json.dump(current_grade, json_file)
+                print(current_grade)
+        ##FIN MATRICULAS T_T
     else:
         print("\nSe ingreso mal la información o no existe.\n")
     
