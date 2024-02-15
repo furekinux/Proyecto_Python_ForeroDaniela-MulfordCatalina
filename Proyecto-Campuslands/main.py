@@ -302,8 +302,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
 
 
 ##___________________________________________FIN EDICION Y LECTURA DE NOTAS_____________________________________________________
-    
-    if hacer_cordi==2:#Estado
+    elif hacer_cordi==2:#Estado
             menu_estado=int(input("Deseas:\n 1. Buscar personas por estado.\n 2. Ver estado de un estudiante.\n 3. Editar estado.\n"))
             
             #Todos los de un mismo estado
@@ -378,21 +377,46 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                                     pan.append(camper)
                                     print(pan)
                                     print(genteJS)            
-
-
-                
                 else:
-                    print("No se encontro")                    
-    elif hacer_cordi==3: #Crear ruta
+                    print("No se encontro")
+
+
+    elif hacer_cordi==3: #Crear ruta(limite horario)
             nueva_ruta=[]
             j=input("Pon el grupo y ruta a crear.(Ejemplo: grupo: P2, Ruta: Note)\n ")
             nueva_ruta.append(j)
             us_ruta.append(nueva_ruta)
             print(us_ruta)
 
-    elif hacer_cordi==4:#Asignar(parte de la hora)
-        id=int(input("Pon la identificacion del profesor que deseas asignar:\n"))
-        salo_trainers
+    
+    
+    elif hacer_cordi==4:#Asignar
+
+        iden = int(input("Ingrese la identificación del entrenador: "))
+        horario = input("Ingrese el horario que desea asignar (por ejemplo, '6:00-10:00'): ")
+        persona = input("Ingrese el nombre del entrenador que desea asignar: ")
+        class_group = input("Ingrese el grupo que desea asignar: ")
+        Salomon = input("Ingrese el nombre del salón al que desea asignar: ")
+        litera = {"hora": horario, "trainer": persona, "id": iden, "grupo": class_group}
+        for sala, clases in salasJS["salas"].items():
+            for clase in clases:
+                for clase_nombre, detalles_clase in clase.items():
+                    horario_clase = detalles_clase["hora"]
+                    if horario_clase == horario:
+                        print(f"¡Error! A la hora {horario} está ocupada en la sala {sala}.")
+                        break
+                    else:
+                        if sala == Salomon:
+                            salasJS["salas"][sala].append({f"clase{len(clases) + 1}": litera})
+                            print(f"Se agregó la clase en el horario {horario} en la sala {sala}.")
+                            break  
+                with open("salas.json", "w") as file:
+                    json.dump(salasJS, file, indent=4)
+
+            print("Información actualizada en salas.json.")
+
+
+
 
     elif hacer_cordi==5:#Listar
         who=int(input(" 1. Listar trainers\n 2. Listar camper y trainer por ruta\n"))
@@ -404,9 +428,21 @@ elif quien=="Coordinacion" or quien=="coordinacion":
             print(lis_trainers)
 
         elif who==2:
-            for q in us_ruta:
-                print(q)
-
+            lis_Ruta = []
+            for UwU in us_ruta:
+                lis_Ruta.append(UwU["Ruta"])
+            rutas_str = ", ".join(lis_Ruta)
+            print("Estas son las rutas que se encuentran: ")
+            print(rutas_str)
+            opcion = input("Selecciona una ruta ingresando su nombre: ")
+            for ruta in us_ruta:
+                if ruta["Ruta"] == opcion:
+                    print("Información de la ruta seleccionada:")
+                    print("Ruta:", ruta["Ruta"])
+                    print("Grupo:", ruta["grupos"],"Trainer:", ruta["trainer"],"Fecha de inicio:", ruta["fecha inicio"],"Fecha de finalizacion:", ruta["fecha final"])
+                    break
+            else:
+                print("La ruta seleccionada no es válida.")
 
 else:
     print("Se ingreso mal la información o no existe.")
