@@ -393,7 +393,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
     elif hacer_cordi==4:#Asignar
 
         iden = int(input("Ingrese la identificación del entrenador: "))
-        horario = input("Ingrese el horario que desea asignar (por ejemplo, '6:00-10:00'): ")
+        horario = input("Ingrese el horario que desea asignar (por ejemplo, '10:00-14:00'): ")
         persona = input("Ingrese el nombre del entrenador que desea asignar: ")
         class_group = input("Ingrese el grupo que desea asignar: ")
         Salomon = input("Ingrese el nombre del salón al que desea asignar: ")
