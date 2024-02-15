@@ -364,7 +364,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                             camper['estado'] = nuevo_estado
                             pan.append(camper)
                             agua = [item for item in us_camper[datico3] if int(item["id"]) != opcion3]
-                            campersJS["grados"][datico3] = agua 
+                            genteJS["gente"] = agua 
                             with open("gente.json", "w") as file:
                                 json.dump(pan, file, indent=4)
                             
@@ -375,8 +375,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                                 if camper["id"] == opcion3:
                                     camper['estado'] = nuevo_estado
                                     pan.append(camper)
-                                    print(pan)
-                                    print(genteJS)            
+                                    
                 else:
                     print("No se encontro")
 
@@ -393,7 +392,7 @@ elif quien=="Coordinacion" or quien=="coordinacion":
     elif hacer_cordi==4:#Asignar
 
         iden = int(input("Ingrese la identificación del entrenador: "))
-        horario = input("Ingrese el horario que desea asignar (por ejemplo, '10:00-14:00'): ")
+        horario = input("Ingrese el horario que desea asignar (por ejemplo, '6:00-10:00'): ")
         persona = input("Ingrese el nombre del entrenador que desea asignar: ")
         class_group = input("Ingrese el grupo que desea asignar: ")
         Salomon = input("Ingrese el nombre del salón al que desea asignar: ")
@@ -412,6 +411,9 @@ elif quien=="Coordinacion" or quien=="coordinacion":
                             break  
                 with open("salas.json", "w") as file:
                     json.dump(salasJS, file, indent=4)
+                    longitud_maxima = 33  
+                    if len(salasJS) > longitud_maxima:
+                        print("El JSON excede el tamaño máximo permitido. Realizar ajustes.")
 
             print("Información actualizada en salas.json.")
 
